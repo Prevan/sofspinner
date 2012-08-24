@@ -38,7 +38,7 @@ public class EnterGame extends Strategy implements Runnable {
 		
 		if(!Lobby.isOpen() || !Lobby.getOpenDialog().isOpen()) {
 			
-			while(!Lobby.isOpen() && !clientDead) {
+			while(!Lobby.isOpen() && !clientDead && !Game.isLoggedIn() && Widgets.get(596, 70).isOnScreen()) {
 				
 				getAccount();
 				clearDetails();
