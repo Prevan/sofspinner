@@ -8,14 +8,13 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import org.powerbot.concurrent.Task;
 import org.powerbot.concurrent.strategy.Strategy;
 import org.powerbot.game.api.methods.Environment;
 import org.powerbot.game.api.util.Time;
 
 import squeal.gui.MainOptionsPanel;
 
-public class Setup extends Strategy implements Task {
+public class Setup extends Strategy implements Runnable {
 
 	private final static int WIDTH = 400;
 	private final static int HEIGHT = 170;

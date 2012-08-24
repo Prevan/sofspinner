@@ -1,13 +1,12 @@
 package squeal.task;
 
-import org.powerbot.concurrent.Task;
 import org.powerbot.concurrent.strategy.Strategy;
 import org.powerbot.game.api.methods.Game;
 import org.powerbot.game.api.methods.Widgets;
 import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.util.Time;
 
-public class CheckItems extends Strategy implements Task {
+public class CheckItems extends Strategy implements Runnable {
 
 	@Override
 	public void run() {			
