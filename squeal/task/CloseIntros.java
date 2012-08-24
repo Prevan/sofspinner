@@ -1,10 +1,9 @@
 package squeal.task;
 
-import org.powerbot.concurrent.Task;
 import org.powerbot.concurrent.strategy.Strategy;
 import org.powerbot.game.api.methods.Widgets;
 
-public class CloseIntros extends Strategy implements Task {
+public class CloseIntros extends Strategy implements Runnable {
 
 	@Override
 	public void run() {

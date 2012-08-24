@@ -3,7 +3,6 @@ package squeal.task;
 import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
-import org.powerbot.concurrent.Task;
 import org.powerbot.concurrent.strategy.Strategy;
 import org.powerbot.game.api.methods.Game;
 import org.powerbot.game.api.methods.Widgets;
@@ -14,7 +13,7 @@ import org.powerbot.game.api.util.Time;
 
 import squeal.Squeal;
 
-public class EnterGame extends Strategy implements Task {
+public class EnterGame extends Strategy implements Runnable {
 
 	private boolean clientDead;
 
