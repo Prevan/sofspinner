@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import org.powerbot.concurrent.Task;
 import org.powerbot.concurrent.strategy.Strategy;
+import org.powerbot.game.api.methods.Environment;
 import org.powerbot.game.api.util.Time;
 
 import squeal.gui.MainOptionsPanel;
@@ -69,7 +70,10 @@ public class Setup extends Strategy implements Task {
 
 		try {
 			
-			prizeLogger = new BufferedWriter(new FileWriter(getMainPanel().getTopLeftPanel().getPrizesFile(), true));
+			//prizeLogger = new BufferedWriter(new FileWriter(getMainPanel().getTopLeftPanel().getPrizesFile(), true));
+			prizeLogger = new BufferedWriter(new FileWriter(Environment.getStorageDirectory() + "\\prizes.txt", true));
+			
+			System.out.println(Environment.getStorageDirectory() + "\\prizes.txt");
 			
 			Squeal.setWriter(prizeLogger);
 			

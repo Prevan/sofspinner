@@ -27,11 +27,17 @@ public class CloseIntros extends Strategy implements Task {
 			
 		}
 		
+		if(Widgets.get(1316, 19).isOnScreen()) {
+			
+			Widgets.get(1316, 19).click(true);
+			
+		}
+		
 	}
 	
 	public boolean validate() {
 		
-		return Widgets.get(1322, 8).isOnScreen() || Widgets.get(1313, 11).isOnScreen() || Widgets.get(1337, 26).isOnScreen();
+		return Widgets.get(1316, 19).isOnScreen() || Widgets.get(1322, 8).isOnScreen() || Widgets.get(1313, 11).isOnScreen() || Widgets.get(1337, 26).isOnScreen();
 		
 	}
 
