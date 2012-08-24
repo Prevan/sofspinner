@@ -1,12 +1,13 @@
 package squeal.task;
 
+import org.powerbot.concurrent.Task;
 import org.powerbot.concurrent.strategy.Strategy;
 import org.powerbot.game.api.methods.Widgets;
 import org.powerbot.game.api.util.Time;
 
 import squeal.Squeal;
 
-public class UseSpin extends Strategy implements Runnable {
+public class UseSpin extends Strategy implements Task {
 
 	@Override
 	public void run() {
@@ -149,7 +150,7 @@ public class UseSpin extends Strategy implements Runnable {
 	
 	public boolean validate() {
 		
-		return (Widgets.get(1139, 2).isOnScreen() || Widgets.get(1253, 181).isOnScreen() || Widgets.get(1253, 259).isOnScreen()) && !Widgets.get(1322, 8).isOnScreen() && !Widgets.get(1313, 11).isOnScreen() && !Widgets.get(1337, 26).isOnScreen() && Widgets.get(1316, 19).isOnScreen();
+		return (Widgets.get(1139, 2).isOnScreen() || Widgets.get(1253, 181).isOnScreen() || Widgets.get(1316, 19).isOnScreen() || Widgets.get(1253, 259).isOnScreen()) && !Widgets.get(1322, 8).isOnScreen() && !Widgets.get(1313, 11).isOnScreen() && !Widgets.get(1337, 26).isOnScreen();
 		
 	}
 
