@@ -8,6 +8,7 @@ import java.util.Scanner;
 import org.powerbot.game.api.ActiveScript;
 import org.powerbot.game.api.Manifest;
 
+import squeal.gui.Overlay;
 import squeal.task.CheckItems;
 import squeal.task.CloseIntros;
 import squeal.task.EnterGame;
@@ -25,6 +26,19 @@ public class Squeal extends ActiveScript {
 	private static Scanner getAccount;
 	private static BufferedWriter prizeLogger;
 	private static boolean logout = false;
+	private static int spinAmount = 0;
+	
+	public static void addSpin() {
+		
+		spinAmount++;
+		
+	}
+	
+	public static int getSpinAmount() {
+		
+		return spinAmount;
+		
+	}
 	
 	public static boolean isLogoutNeeded() {
 		
@@ -144,6 +158,8 @@ public class Squeal extends ActiveScript {
 	
 	@Override
 	protected void setup() {
+		
+		provide(new Overlay());
 		
 		provide(new Setup());
 		provide(new EnterGame());

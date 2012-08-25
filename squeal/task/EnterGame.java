@@ -126,6 +126,7 @@ public class EnterGame extends Strategy implements Runnable {
 				}
 				
 				Squeal.setAccount(account);
+				Squeal.addSpin();
 				
 			} else {
 				
