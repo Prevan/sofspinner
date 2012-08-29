@@ -16,7 +16,7 @@ import squeal.task.UseSpin;
 
 //NOTE: Currently crashes if it fails to logout then correctly logs out. Also crashes if it fails to enter the game and cannot.
 
-@Manifest(name = "Squeal of Fortune Spinner", authors = "Prevan2", description = "Logs into accounts off of a list, then spins all spins and logs out.")
+@Manifest(name = "Squeal of Fortune Spinner", authors = {"Prevan2"}, description = "Logs into accounts off of a list, then spins all spins and logs out.")
 public class Squeal extends ActiveScript {
 	
 	private static String account;
