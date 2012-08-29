@@ -9,7 +9,6 @@ import org.powerbot.game.api.ActiveScript;
 import org.powerbot.game.api.Manifest;
 
 import squeal.gui.Overlay;
-import squeal.task.CheckItems;
 import squeal.task.CloseIntros;
 import squeal.task.EnterGame;
 import squeal.task.OpenSqueal;
@@ -17,7 +16,7 @@ import squeal.task.UseSpin;
 
 //NOTE: Currently crashes if it fails to logout then correctly logs out. Also crashes if it fails to enter the game and cannot.
 
-@Manifest(name = "Squeal of Fortune Spinner", authors = "Parker", description = "Logs into accounts off of a list, then spins all spins and logs out.")
+@Manifest(name = "Squeal of Fortune Spinner", authors = "Prevan2", description = "Logs into accounts off of a list, then spins all spins and logs out.")
 public class Squeal extends ActiveScript {
 	
 	private static String account;
@@ -164,16 +163,9 @@ public class Squeal extends ActiveScript {
 		provide(new Setup());
 		provide(new EnterGame());
 		provide(new CloseIntros());
-		//provide(new CloseIntro());
-		//provide(new CloseIntro2());
-		provide(new CheckItems());
+		//provide(new CheckItems()); //Disabled due to incorrect widgets.
 		provide(new OpenSqueal());
-		
 		provide(new UseSpin());
-		
-		//provide(new OpenGame());
-		//provide(new PlaySpin());
-		//provide(new ChooseOption());
 		
 	}
 	

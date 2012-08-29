@@ -7,7 +7,6 @@ import org.powerbot.concurrent.strategy.Strategy;
 import org.powerbot.game.api.methods.Game;
 import org.powerbot.game.api.methods.Widgets;
 import org.powerbot.game.api.methods.input.Keyboard;
-import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.methods.widget.Lobby;
 import org.powerbot.game.api.util.Time;
 
@@ -70,21 +69,6 @@ public class EnterGame extends Strategy implements Runnable {
 					
 				}
 				
-				if(Inventory.isFull()) {				
-
-					if(Widgets.get(548, 159).click(true)) {
-						
-						Time.sleep(100, 200);
-						
-						if (Game.logout(false)) {
-							
-							//Method sometimes fails.. The game fails to logout and the script stops for some currently unknown reason.
-							
-						}
-						
-					}
-					
-				}
 			}
 			
 		}

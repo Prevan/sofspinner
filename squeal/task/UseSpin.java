@@ -8,15 +8,23 @@ import squeal.Squeal;
 
 public class UseSpin extends Strategy implements Runnable {
 
+	private final int SPIN_BUTTON = 89;
+	private final int CLAIM_BUTTON = 186;
+	private final int IS_CLAIMED = 184;
+	private final int DISCARD_BUTTON = 236;
+	private final int CONFIRM_DISCARD = 295; 
+	private final int IS_DISCARDED = 231;
+	private final int DONE = 237;
+	private final int PRIZE_TEXT = 167;
+	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 		if(Widgets.get(1139, 2).isOnScreen()) {
 			
 			if(Widgets.get(1139, 6).getText().equals("0") && !Widgets.get(1252, 3).isOnScreen()) {
 				
-				if(Widgets.get(548, 159).click(true) && !Widgets.get(1322, 8).isOnScreen()) {
+				if(Widgets.get(548, 160).click(true) && !Widgets.get(1322, 8).isOnScreen()) {
 					
 					Time.sleep(100, 200);
 					
@@ -38,7 +46,7 @@ public class UseSpin extends Strategy implements Runnable {
 				
 				if(Widgets.get(1252, 3).isOnScreen()) {
 					
-					while((!Widgets.get(1253, 181).isOnScreen() && Widgets.get(1252, 3).isOnScreen()) && !Widgets.get(1253, 259).isOnScreen()) {
+					while((!Widgets.get(1253, SPIN_BUTTON).isOnScreen() && Widgets.get(1252, 3).isOnScreen()) && !Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
 						
 						Widgets.get(1252, 3).click(true);
 						
@@ -48,7 +56,7 @@ public class UseSpin extends Strategy implements Runnable {
 					
 				} else {
 					
-					while((!Widgets.get(1253, 181).isOnScreen() && Widgets.get(1139, 2).isOnScreen()) && !Widgets.get(1253, 259).isOnScreen()) {
+					while((!Widgets.get(1253, SPIN_BUTTON).isOnScreen() && Widgets.get(1139, 2).isOnScreen()) && !Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
 				
 						Widgets.get(1139, 7).click(true);
 				
@@ -62,29 +70,31 @@ public class UseSpin extends Strategy implements Runnable {
 			
 		}
 		
-		while((Widgets.get(1253, 181).isOnScreen() && !Widgets.get(1253, 259).isOnScreen())) {
+		//click the spin button
+		
+		while((Widgets.get(1253, SPIN_BUTTON).isOnScreen() && !Widgets.get(1253, CLAIM_BUTTON).isOnScreen())) {
 			
-			Widgets.get(1253, 181).click(true);
+			Widgets.get(1253, SPIN_BUTTON).click(true);
 			
 			Time.sleep(100, 200);
 			
 		}
 		
-		if(Widgets.get(1253, 259).isOnScreen()) {
+		if(Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
 			
-			final String prize = Widgets.get(1253, 259).getText();
+			final String prize = Widgets.get(1253, PRIZE_TEXT).getText();
 			
-			if(Widgets.get(1253, 278).isOnScreen() && Widgets.get(1253, 278).getText().startsWith("Subscribe")) {
+			if(Widgets.get(1253, CLAIM_BUTTON).isOnScreen() && Widgets.get(1253, CLAIM_BUTTON).getText().startsWith("Subscribe")) {
 				
-				while(Widgets.get(1253, 322).isOnScreen() && !Widgets.get(1253, 323).isOnScreen()) {
+				while(Widgets.get(1253, DISCARD_BUTTON).isOnScreen() && !Widgets.get(1253, IS_DISCARDED).isOnScreen()) {
 					
-					Widgets.get(1253, 328).click(true);
+					Widgets.get(1253, DISCARD_BUTTON).click(true);
 					
 					Time.sleep(1000, 1500);
 					
-					if(Widgets.get(1253, 387).isOnScreen()) {
+					if(Widgets.get(1253, CONFIRM_DISCARD).isOnScreen()) {
 						
-						Widgets.get(1253, 387).click(true);
+						Widgets.get(1253, CONFIRM_DISCARD).click(true);
 						
 						Time.sleep(1000, 1500);
 						
@@ -92,7 +102,7 @@ public class UseSpin extends Strategy implements Runnable {
 					
 				}
 					
-				Widgets.get(1253, 343).click(true); //done
+				Widgets.get(1253, DONE).click(true); //done
 				
 				Time.sleep(1000, 1500);
 
@@ -113,15 +123,15 @@ public class UseSpin extends Strategy implements Runnable {
 					
 			} else {
 				
-				while(!Widgets.get(1253, 276).isOnScreen() && Widgets.get(1253, 275).isOnScreen()) {
+				while(!Widgets.get(1253, IS_CLAIMED).isOnScreen() && Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
 					
-					Widgets.get(1253, 278).click(true); 
+					Widgets.get(1253, CLAIM_BUTTON).click(true); 
 						
 					Time.sleep(1000, 1500);
 						
 				}
 				
-				Widgets.get(1253, 343).click(true);
+				Widgets.get(1253, DONE).click(true);
 				
 				try {
 					
@@ -149,7 +159,7 @@ public class UseSpin extends Strategy implements Runnable {
 	
 	public boolean validate() {
 		
-		return (Widgets.get(1139, 2).isOnScreen() || Widgets.get(1253, 181).isOnScreen() || Widgets.get(1253, 259).isOnScreen()) && !Widgets.get(1322, 8).isOnScreen() && !Widgets.get(1313, 11).isOnScreen() && !Widgets.get(1337, 26).isOnScreen() && !Widgets.get(1316, 19).isOnScreen();
+		return (Widgets.get(1139, 2).isOnScreen() || Widgets.get(1253, SPIN_BUTTON).isOnScreen() || Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) && !Widgets.get(1322, 8).isOnScreen() && !Widgets.get(1313, 11).isOnScreen() && !Widgets.get(1337, 26).isOnScreen() && !Widgets.get(1316, 19).isOnScreen();
 		
 	}
 
