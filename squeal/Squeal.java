@@ -11,6 +11,7 @@ import org.powerbot.game.api.Manifest;
 import squeal.gui.Overlay;
 import squeal.task.CloseIntros;
 import squeal.task.EnterGame;
+import squeal.task.LobbyHelp;
 import squeal.task.OpenSqueal;
 import squeal.task.UseSpin;
 
@@ -162,6 +163,7 @@ public class Squeal extends ActiveScript {
 		
 		provide(new Setup());
 		provide(new EnterGame());
+		provide(new LobbyHelp());
 		provide(new CloseIntros());
 		//provide(new CheckItems()); //Disabled due to incorrect widgets.
 		provide(new OpenSqueal());

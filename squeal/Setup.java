@@ -52,7 +52,7 @@ public class Setup extends Strategy implements Runnable {
 	
 	@Override
 	public void run() {
-				
+		
 		options = new JFrame("Options");
 		options.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
