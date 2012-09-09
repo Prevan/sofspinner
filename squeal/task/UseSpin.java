@@ -12,6 +12,7 @@ public class UseSpin extends Strategy implements Runnable {
 	private final int CLAIM_BUTTON = 186;
 	private final int IS_CLAIMED = 184;
 	private final int DISCARD_BUTTON = 236;
+	private final int CONVERT_COIN_TEXT = 45;
 	private final int CONFIRM_DISCARD = 295; 
 	private final int IS_DISCARDED = 231;
 	private final int DONE = 237;
@@ -82,7 +83,7 @@ public class UseSpin extends Strategy implements Runnable {
 		
 		if(Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
 			
-			final String prize = Widgets.get(1253, PRIZE_TEXT).getText();
+			String prize = Widgets.get(1253, PRIZE_TEXT).getText();
 			
 			if(Widgets.get(1253, CLAIM_BUTTON).isOnScreen() && Widgets.get(1253, CLAIM_BUTTON).getText().startsWith("Subscribe")) {
 				
@@ -123,11 +124,158 @@ public class UseSpin extends Strategy implements Runnable {
 					
 			} else {
 				
-				while(!Widgets.get(1253, IS_CLAIMED).isOnScreen() && Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
+				if(Squeal.getConvertOption()) {
 					
-					Widgets.get(1253, CLAIM_BUTTON).click(true); 
+					if(Squeal.getFishMaskOption()) {
 						
-					Time.sleep(1000, 1500);
+						if(prize.startsWith("Not bad! You won: Fish mask")) {
+							
+							if(Widgets.get(1253, IS_CLAIMED).isOnScreen() && !Widgets.get(1253, IS_DISCARDED).isOnScreen()) {
+								
+								while(Widgets.get(1253, DISCARD_BUTTON).isOnScreen() && !Widgets.get(1253, IS_DISCARDED).isOnScreen()) {
+									
+									Widgets.get(1253, DISCARD_BUTTON).click(true);
+									
+									Time.sleep(1000, 1500);
+									
+									if(Widgets.get(1253, CONFIRM_DISCARD).isOnScreen()) {
+										
+										String p = Widgets.get(1253, CONVERT_COIN_TEXT).getText();
+										
+										Widgets.get(1253, CONFIRM_DISCARD).click(true);
+										
+										Time.sleep(1000, 1500);
+										
+										prize = p + " from " + prize;
+										
+									}
+									
+								}
+								
+							} else {
+								
+								while(!Widgets.get(1253, IS_CLAIMED).isOnScreen() && Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
+								
+									Widgets.get(1253, CLAIM_BUTTON).click(true); 
+										
+									Time.sleep(1000, 1500);
+									
+								}
+								
+							}
+							
+						} else {
+							
+							if(Widgets.get(1253, DISCARD_BUTTON).getText().startsWith("Convert")) {
+								
+								while(Widgets.get(1253, DISCARD_BUTTON).isOnScreen() && !Widgets.get(1253, IS_DISCARDED).isOnScreen()) {
+									
+									Widgets.get(1253, DISCARD_BUTTON).click(true);
+									
+									Time.sleep(1000, 1500);
+									
+									if(Widgets.get(1253, CONFIRM_DISCARD).isOnScreen()) {
+										
+										String p = Widgets.get(1253, CONVERT_COIN_TEXT).getText();
+										
+										Widgets.get(1253, CONFIRM_DISCARD).click(true);
+										
+										Time.sleep(1000, 1500);
+										
+										prize = p + " from " + prize;
+										
+									}
+									
+								}
+								
+							} else {
+								
+								while(!Widgets.get(1253, IS_CLAIMED).isOnScreen() && Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
+									
+									Widgets.get(1253, CLAIM_BUTTON).click(true); 
+										
+									Time.sleep(1000, 1500);
+									
+								}
+								
+							}
+							
+						}
+						
+					} else {
+						
+						if(Widgets.get(1253, DISCARD_BUTTON).getText().startsWith("Convert")) {
+							
+							while(Widgets.get(1253, DISCARD_BUTTON).isOnScreen() && !Widgets.get(1253, IS_DISCARDED).isOnScreen()) {
+								
+								Widgets.get(1253, DISCARD_BUTTON).click(true);
+								
+								Time.sleep(1000, 1500);
+								
+								if(Widgets.get(1253, CONFIRM_DISCARD).isOnScreen()) {
+									
+									String p = Widgets.get(1253, CONVERT_COIN_TEXT).getText();
+									
+									Widgets.get(1253, CONFIRM_DISCARD).click(true);
+									
+									Time.sleep(1000, 1500);
+									
+									prize = p + " from " + prize;
+									
+								}
+								
+							}
+							
+						} else {
+							
+							while(!Widgets.get(1253, IS_CLAIMED).isOnScreen() && Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
+								
+								Widgets.get(1253, CLAIM_BUTTON).click(true); 
+									
+								Time.sleep(1000, 1500);
+								
+							}
+							
+						}
+						
+					}
+					
+					
+				} else {
+					
+					if(Widgets.get(1253, IS_CLAIMED).isOnScreen() && !Widgets.get(1253, IS_DISCARDED).isOnScreen()) {
+						
+						while(Widgets.get(1253, DISCARD_BUTTON).isOnScreen() && !Widgets.get(1253, IS_DISCARDED).isOnScreen()) {
+							
+							Widgets.get(1253, DISCARD_BUTTON).click(true);
+							
+							Time.sleep(1000, 1500);
+							
+							if(Widgets.get(1253, CONFIRM_DISCARD).isOnScreen()) {
+								
+								String p = Widgets.get(1253, CONVERT_COIN_TEXT).getText();
+								
+								Widgets.get(1253, CONFIRM_DISCARD).click(true);
+								
+								Time.sleep(1000, 1500);
+								
+								prize = p + " from " + prize;
+								
+							}
+							
+						}
+						
+					} else {
+						
+						while(!Widgets.get(1253, IS_CLAIMED).isOnScreen() && Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
+						
+							Widgets.get(1253, CLAIM_BUTTON).click(true); 
+								
+							Time.sleep(1000, 1500);
+							
+						}
+						
+					}
 						
 				}
 				

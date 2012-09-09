@@ -27,6 +27,32 @@ public class Squeal extends ActiveScript {
 	private static BufferedWriter prizeLogger;
 	private static boolean logout = false;
 	private static int spinAmount = 0;
+	private static boolean convertCoins = false;
+	private static boolean saveMasks = false;
+	
+	public static void convertToCoins(boolean c) {
+		
+		convertCoins = c;
+		
+	}
+	
+	public static void saveFishMasks(boolean c) {
+		
+		saveMasks = c;
+		
+	}
+	
+	public static boolean getConvertOption() {
+		
+		return convertCoins;
+		
+	}
+	
+	public static boolean getFishMaskOption() {
+		
+		return saveMasks;
+		
+	}
 	
 	public static void addSpin() {
 		
