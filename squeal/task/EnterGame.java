@@ -39,7 +39,7 @@ public class EnterGame extends Strategy implements Runnable {
 			
 			while(!Lobby.isOpen() && !clientDead && !Game.isLoggedIn() && Widgets.get(596, 70).isOnScreen()) {
 				
-				getAccount();
+				getId();
 				clearDetails();
 				enterDetails();
 				attemptLog();
@@ -75,46 +75,46 @@ public class EnterGame extends Strategy implements Runnable {
 		
 	}
 	
-	public void getAccount() {
+	public void getId() {
 		
 		try {
 			
-			if(Squeal.anotherAccount()) {	
+			if(Squeal.anotherId()) {	
 				
-				String acc = Squeal.nextAccount();
+				String id = Squeal.nextId();
 				
-				System.out.println(acc);
+				System.out.println(id);
 				
-				Scanner manageAccount = new Scanner(acc);
+				Scanner manageId = new Scanner(id);
 				
-				manageAccount.useDelimiter(":");
+				manageId.useDelimiter(":");
 				
-				String account = manageAccount.next();
+				String aId = manageId.next();
 				
-				System.out.println("Account: " + account);
+				System.out.println("Id: " + aId);
 				
-				if(manageAccount.hasNext()) {
+				if(manageId.hasNext()) {
 					
-					String password = manageAccount.next();
+					String serial = manageId.next();
 					
-					Squeal.setPassword(password);
+					Squeal.setSerial(serial);
 					
-					System.out.println("Pass: " + password);
+					System.out.println("Serial: " + serial);
 					
 				} else {
 					
-					Squeal.setPassword(Squeal.getGlobalPassword());
+					Squeal.setSerial(Squeal.getGlobalSerial());
 					
-					System.out.println("Pass: " + Squeal.getCurrentPassword());
+					System.out.println("Serial: " + Squeal.getCurrentSerial());
 					
 				}
 				
-				Squeal.setAccount(account);
+				Squeal.setId(aId);
 				Squeal.addSpin();
 				
 			} else {
 				
-				System.out.println("There are not anymore accounts");
+				System.out.println("There are not anymore ids");
 				
 				Squeal.stopScript();
 				
@@ -154,7 +154,7 @@ public class EnterGame extends Strategy implements Runnable {
 			
 			Time.sleep(100, 200);
 			
-			Keyboard.sendText(Squeal.getCurrentAccount(), false);
+			Keyboard.sendText(Squeal.getCurrentId(), false);
 			
 		}
 		
@@ -162,7 +162,7 @@ public class EnterGame extends Strategy implements Runnable {
 			
 			Time.sleep(100, 200);
 			
-			Keyboard.sendText(Squeal.getCurrentPassword(), false);
+			Keyboard.sendText(Squeal.getCurrentId(), false);
 			
 		}
 		
@@ -177,7 +177,7 @@ public class EnterGame extends Strategy implements Runnable {
 			
 			if(Widgets.get(596, 13).getText().startsWith("Invalid")) {
 				
-				System.out.println("Bad Login: " + Squeal.getCurrentAccount());
+				System.out.println("Bad Login: " + Squeal.getCurrentId());
 				
 				Widgets.get(596, 65).click(true);
 				

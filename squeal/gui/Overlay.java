@@ -32,9 +32,9 @@ public class Overlay extends Strategy implements PaintListener {
 
 		g.setColor(Color.WHITE);
 		
-		g.drawString("Current account: " + Squeal.getCurrentAccount(), x, y);
-		g.drawString("Accounts completed: " + (Squeal.getSpinAmount() - 1), x, y + 15);
-		g.drawString("Accounts per hour: " + d.format(perHour()), x, y + 30);
+		g.drawString("Current Id: " + Squeal.getCurrentId(), x, y);
+		g.drawString("Ids completed: " + (Squeal.getSpinAmount() - 1), x, y + 15);
+		g.drawString("Ids per hour: " + d.format(perHour()), x, y + 30);
 		g.drawString("Time running: " + t.toElapsedString(), x, y + 45);
 		
 	}

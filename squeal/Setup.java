@@ -21,7 +21,7 @@ public class Setup extends Strategy implements Runnable {
 	private static MainOptionsPanel mainPanel = new MainOptionsPanel();
 	private static JFrame options;
 	
-	private Scanner getAccount;
+	private Scanner getId;
 	private BufferedWriter prizeLogger;
 	
 	private boolean guiState = true;
@@ -86,27 +86,27 @@ public class Setup extends Strategy implements Runnable {
 
 		try {
 			
-			getAccount = new Scanner(new FileReader(getMainPanel().getTopLeftPanel().getAccountsFile()));
+			getId = new Scanner(new FileReader(getMainPanel().getTopLeftPanel().getIdsFile()));
 			
-			Squeal.setScanner(getAccount);
+			Squeal.setScanner(getId);
 			
 		} catch(Exception e) {
 			
 			e.printStackTrace();
 			
-			JOptionPane.showMessageDialog(null, "You did not specify an account list.");
+			JOptionPane.showMessageDialog(null, "You did not specify an id list.");
 			
 		}
 		
 		guiState = false;
 		
-		if(!getMainPanel().getTopRightPanel().getGlobalPassword().equals("")) {
+		if(!getMainPanel().getTopRightPanel().getGlobalSer().equals("")) {
 			
-			Squeal.setGlobalPassword(getMainPanel().getTopRightPanel().getGlobalPassword());
+			Squeal.setGlobalSerial(getMainPanel().getTopRightPanel().getGlobalSer());
 			
 		} else {
 			
-			System.out.println("No Password");
+			System.out.println("No Serial");
 			
 		}
 

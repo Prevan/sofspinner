@@ -20,10 +20,10 @@ import squeal.task.UseSpin;
 @Manifest(name = "Squeal of Fortune Spinner", authors = {"Prevan2"}, description = "Logs into accounts off of a list, then spins all spins and logs out.")
 public class Squeal extends ActiveScript {
 	
-	private static String account;
-	private static String password;
-	private static String globalPassword;
-	private static Scanner getAccount;
+	private static String id;
+	private static String serial;
+	private static String globalSerial;
+	private static Scanner getId;
 	private static BufferedWriter prizeLogger;
 	private static boolean logout = false;
 	private static int spinAmount = 0;
@@ -78,45 +78,45 @@ public class Squeal extends ActiveScript {
 		
 	}
 	
-	public static String getCurrentAccount() {
+	public static String getCurrentId() {
 		
-		return account;
-		
-	}
-	
-	public static void setAccount(String acc) {
-		
-		account = acc;
+		return id;
 		
 	}
 	
-	public static String getCurrentPassword() {
+	public static void setId(String acc) {
 		
-		return password;
-		
-	}
-	
-	public static void setGlobalPassword(String p) {
-		
-		globalPassword = p;
+		id = acc;
 		
 	}
 	
-	public static String getGlobalPassword() {
+	public static String getCurrentSerial() {
 		
-		return globalPassword;
+		return serial;
 		
 	}
 	
-	public static void setPassword(String pass) {
+	public static void setGlobalSerial(String p) {
 		
-		password = pass;
+		globalSerial = p;
+		
+	}
+	
+	public static String getGlobalSerial() {
+		
+		return globalSerial;
+		
+	}
+	
+	public static void setSerial(String p) {
+		
+		serial = p;
 		
 	}
 	
 	public static void setScanner(Scanner s) {
 		
-		getAccount = s;
+		getId = s;
 		
 	}
 	
@@ -126,15 +126,15 @@ public class Squeal extends ActiveScript {
 		
 	}
 	
-	public static boolean anotherAccount() {
+	public static boolean anotherId() {
 		
-		return getAccount.hasNext();
+		return getId.hasNext();
 		
 	}
 	
-	public static String nextAccount() {
+	public static String nextId() {
 		
-		return getAccount.nextLine();
+		return getId.nextLine();
 		
 	}
 	

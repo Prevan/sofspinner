@@ -18,7 +18,7 @@ import squeal.Setup;
 
 public class TopLeft extends JPanel {
 	
-	private JTextField accounts = new JTextField(10);
+	private JTextField ids = new JTextField(10);
 	private JTextField prizes = new JTextField(10);
 	private JButton browse = new JButton("...");
 	private JButton browse2 = new JButton("Open");
@@ -29,10 +29,9 @@ public class TopLeft extends JPanel {
 		setPreferredSize(new Dimension(Setup.getWidth() / 2, (int) (Setup.getHeight() * 0.75)));
 		
 		JPanel account = new JPanel();
+		add(new JLabel("Id List:      "));
 		
-		add(new JLabel("Account List: "));
-		
-		account.add(accounts);
+		account.add(ids);
 		
 		browse.addActionListener(new FileChoosing());
 		
@@ -55,9 +54,9 @@ public class TopLeft extends JPanel {
 		
 	}
 	
-	public String getAccountsFile() {
+	public String getIdsFile() {
 		
-		return accounts.getText();
+		return ids.getText();
 		
 	}
 	
@@ -85,7 +84,7 @@ public class TopLeft extends JPanel {
 					
 					if(e.getSource() == browse) {
 						
-						accounts.setText(selectedFile.getAbsolutePath());
+						ids.setText(selectedFile.getAbsolutePath());
 						
 					}
 					

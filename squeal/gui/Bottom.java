@@ -100,12 +100,12 @@ public class Bottom extends JPanel {
 
 			if(e.getSource() == start) {
 				
-				System.out.println("Account List: " + Setup.getMainPanel().getTopLeftPanel().getAccountsFile());
+				System.out.println("id List: " + Setup.getMainPanel().getTopLeftPanel().getIdsFile());
 				System.out.println("Prize Log: " + Setup.getMainPanel().getTopLeftPanel().getPrizesFile());
 				
-				if(Setup.getMainPanel().getTopRightPanel().isGlobalPassEnabled()) {
+				if(Setup.getMainPanel().getTopRightPanel().isGlobalSerEnabled()) {
 					
-					System.out.println("Global Password: " + Setup.getMainPanel().getTopRightPanel().getGlobalPassword());
+					System.out.println("Global serial: " + Setup.getMainPanel().getTopRightPanel().getGlobalSer());
 					
 				}
 				

@@ -14,7 +14,7 @@ import squeal.Setup;
 
 public class TopRight extends JPanel {
 	
-	private JTextField globalPass = new JTextField(10);
+	private JTextField globalSer = new JTextField(10);
 	private JRadioButton yes = new JRadioButton("Yes");
 	private JRadioButton no = new JRadioButton("No");
 	private JPanel globalPanel = new JPanel();
@@ -23,7 +23,7 @@ public class TopRight extends JPanel {
 		
 		setPreferredSize(new Dimension(Setup.getWidth() / 2, (int) (Setup.getHeight() * 0.75)));
 		
-		add(new JLabel("Use global password?"));
+		add(new JLabel("Global Serial?"));
 		
 		JPanel choice = new JPanel();
 		
@@ -44,24 +44,24 @@ public class TopRight extends JPanel {
 		
 		globalPanel.setPreferredSize(new Dimension(Setup.getWidth() / 2, 100));
 		
-		globalPanel.add(new JLabel("Global password:"));
+		globalPanel.add(new JLabel("Global Serial:"));
 		
-		globalPanel.add(globalPass);
+		globalPanel.add(globalSer);
 		
 		add(globalPanel);
 		
 		
 	}
 	
-	public boolean isGlobalPassEnabled() {
+	public boolean isGlobalSerEnabled() {
 		
-		return globalPass.isEnabled();
+		return globalSer.isEnabled();
 		
 	}
 	
-	public String getGlobalPassword() {
+	public String getGlobalSer() {
 		
-		return globalPass.getText();
+		return globalSer.getText();
 		
 	}
 	
@@ -73,12 +73,12 @@ public class TopRight extends JPanel {
 			if(event.getSource() == yes) {
 				
 				globalPanel.setVisible(true);
-				globalPass.setEnabled(true);
+				globalSer.setEnabled(true);
 				
 			} else {
 				
 				globalPanel.setVisible(false);
-				globalPass.setEnabled(false);
+				globalSer.setEnabled(false);
 				
 			}
 			

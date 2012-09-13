@@ -109,7 +109,7 @@ public class UseSpin extends Strategy implements Runnable {
 
 				try {
 					
-					Squeal.logPrize(Squeal.getCurrentAccount() + " discarded prize: ");
+					Squeal.logPrize(Squeal.getCurrentId() + " discarded prize: ");
 					Squeal.logPrize(prize);
 
 					Squeal.flushLog();
@@ -283,7 +283,7 @@ public class UseSpin extends Strategy implements Runnable {
 				
 				try {
 					
-					Squeal.logPrize(Squeal.getCurrentAccount() + " claimed prize: ");
+					Squeal.logPrize(Squeal.getCurrentId() + " claimed prize: ");
 					Squeal.logPrize(prize);
 					
 					Squeal.flushLog();
@@ -294,7 +294,7 @@ public class UseSpin extends Strategy implements Runnable {
 					
 				}
 				
-				System.out.println(Squeal.getCurrentAccount() + " claimed: \n" + prize);
+				System.out.println(Squeal.getCurrentId() + " claimed: \n" + prize);
 				
 				Time.sleep(1000, 1500);
 			
