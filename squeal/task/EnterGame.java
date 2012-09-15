@@ -162,7 +162,7 @@ public class EnterGame extends Strategy implements Runnable {
 			
 			Time.sleep(100, 200);
 			
-			Keyboard.sendText(Squeal.getCurrentId(), false);
+			Keyboard.sendText(Squeal.getCurrentSerial(), false);
 			
 		}
 		
