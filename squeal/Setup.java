@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import org.powerbot.concurrent.strategy.Strategy;
 import org.powerbot.game.api.methods.Environment;
+import org.powerbot.game.api.methods.Widgets;
 import org.powerbot.game.api.util.Time;
 
 import squeal.gui.MainOptionsPanel;
@@ -64,7 +65,6 @@ public class Setup extends Strategy implements Runnable {
 		while(options.isShowing()) {
 			
 			Time.sleep(5000);
-			
 		}	
 
 		try {

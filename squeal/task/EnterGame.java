@@ -195,6 +195,16 @@ public class EnterGame extends Strategy implements Runnable {
 				
 			}
 			
+			if(Widgets.get(596, 13).getText().startsWith("Your account")) {
+				
+				if(Widgets.get(596, 65).click(true)) {
+					
+					System.out.println("account locked....");
+					
+				}
+				
+			}
+			
 			if(Widgets.get(596, 13).getText().startsWith("Your game")) {
 				
 				//I need a method to make the client restart.

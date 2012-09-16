@@ -4,13 +4,23 @@ import org.powerbot.concurrent.strategy.Strategy;
 import org.powerbot.game.api.methods.Widgets;
 import org.powerbot.game.api.util.Time;
 
+import squeal.Squeal;
+
 public class OpenSqueal extends Strategy implements Runnable {
 
 	@Override
 	public void run() {
 		
-		Widgets.get(548, 58).click(true);
-		
+		if(Widgets.get(548, 92).isOnScreen()) {
+			
+			Widgets.get(548, 58).click(true);
+			
+		} else {
+			
+			Squeal.setLogout(true);
+			
+		}
+
 		Time.sleep(100, 200);
 		
 	}
