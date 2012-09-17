@@ -15,6 +15,7 @@ public class UseSpin extends Strategy implements Runnable {
 	private final int CONVERT_COIN_TEXT = 45;
 	private final int CONFIRM_DISCARD = 295; 
 	private final int IS_DISCARDED = 231;
+	private final int IS_PLAY_AGAIN = 265;
 	private final int DONE = 237;
 	private final int PRIZE_TEXT = 167;
 	
@@ -103,7 +104,17 @@ public class UseSpin extends Strategy implements Runnable {
 					
 				}
 					
-				Widgets.get(1253, DONE).click(true); //done
+				
+				if(!Widgets.get(1253, IS_PLAY_AGAIN).isOnScreen()) {
+					
+					Widgets.get(1253, IS_PLAY_AGAIN).click(true);
+					
+				} else {
+					
+					Widgets.get(1253, DONE).click(true); //done
+					
+				}
+
 				
 				Time.sleep(1000, 1500);
 
@@ -279,7 +290,15 @@ public class UseSpin extends Strategy implements Runnable {
 						
 				}
 				
-				Widgets.get(1253, DONE).click(true);
+				if(!Widgets.get(1253, IS_PLAY_AGAIN).isOnScreen()) {
+					
+					Widgets.get(1253, IS_PLAY_AGAIN).click(true);
+					
+				} else {
+					
+					Widgets.get(1253, DONE).click(true); //done
+					
+				}
 				
 				try {
 					
