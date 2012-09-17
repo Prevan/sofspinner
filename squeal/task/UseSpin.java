@@ -47,7 +47,7 @@ public class UseSpin extends Strategy implements Runnable {
 				
 				if(Widgets.get(1252, 3).isOnScreen()) {
 					
-					while((!Widgets.get(1253, SPIN_BUTTON).isOnScreen() && Widgets.get(1252, 3).isOnScreen()) && !Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
+					while(!Widgets.get(1316, 19).isOnScreen() && !Widgets.get(1322, 8).isOnScreen() && !Widgets.get(1313, 11).isOnScreen() && !Widgets.get(1337, 26).isOnScreen() && (!Widgets.get(1253, SPIN_BUTTON).isOnScreen() && Widgets.get(1252, 3).isOnScreen()) && !Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
 						
 						Widgets.get(1252, 3).click(true);
 						
