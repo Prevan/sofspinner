@@ -106,9 +106,17 @@ public class UseSpin extends Strategy implements Runnable {
 				}
 					
 				
-				if(!Widgets.get(1253, IS_PLAY_AGAIN).isOnScreen() && !Widgets.get(1253, PLAY_AGAIN).getText().startsWith("Subscribe")) {
+				if((!Widgets.get(1253, IS_PLAY_AGAIN).isOnScreen() && !Widgets.get(1253, PLAY_AGAIN).getText().startsWith("Subscribe")) || !Widgets.get(1253, IS_CLAIMED).isOnScreen()) {
 					
-					Widgets.get(1253, IS_PLAY_AGAIN).click(true);
+					if(!Widgets.get(1253, IS_PLAY_AGAIN).isOnScreen()) {
+						
+						Widgets.get(1253, IS_PLAY_AGAIN).click(true);
+						
+					} else {
+						
+						
+						
+					}
 					
 				} else {
 					
@@ -291,9 +299,17 @@ public class UseSpin extends Strategy implements Runnable {
 						
 				}
 				
-				if(!Widgets.get(1253, IS_PLAY_AGAIN).isOnScreen() && !Widgets.get(1253, PLAY_AGAIN).getText().startsWith("Subscribe")) {
+				if((!Widgets.get(1253, IS_PLAY_AGAIN).isOnScreen() && !Widgets.get(1253, PLAY_AGAIN).getText().startsWith("Subscribe")) || !Widgets.get(1253, IS_CLAIMED).isOnScreen()) {
 					
-					Widgets.get(1253, IS_PLAY_AGAIN).click(true);
+					if(!Widgets.get(1253, IS_PLAY_AGAIN).isOnScreen()) {
+						
+						Widgets.get(1253, IS_PLAY_AGAIN).click(true);
+						
+					} else {
+						
+						
+						
+					}
 					
 				} else {
 					
