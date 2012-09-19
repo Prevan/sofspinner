@@ -20,14 +20,10 @@ public class EnterGame extends Strategy implements Runnable {
 	public void run() {
 		
 		if(Squeal.isLogoutNeeded()) {
-			
-			while(Game.isLoggedIn()) {
 				
-				Game.logout(false);
+			Game.logout(false);
 				
-				Time.sleep(1000);
-				
-			}
+			Time.sleep(1000);
 			
 			Squeal.setLogout(false);
 			

@@ -8,24 +8,24 @@ import squeal.Squeal;
 
 public class UseSpin extends Strategy implements Runnable {
 
-	private final int SPIN_BUTTON = 89;
-	private final int CLAIM_BUTTON = 186;
-	private final int IS_CLAIMED = 184;
-	private final int DISCARD_BUTTON = 236;
+	private final int SPIN_BUTTON = 91;
+	private final int CLAIM_BUTTON = 188;
+	private final int IS_CLAIMED = 186;
+	private final int DISCARD_BUTTON = 238;
 	private final int CONVERT_COIN_TEXT = 45;
 	private final int CONFIRM_DISCARD = 295; 
-	private final int IS_DISCARDED = 231;
-	private final int IS_PLAY_AGAIN = 265;
-	private final int PLAY_AGAIN = 270;
-	private final int DONE = 237;
-	private final int PRIZE_TEXT = 167;
+	private final int IS_DISCARDED = 233;
+	private final int IS_PLAY_AGAIN = 267;
+	private final int PLAY_AGAIN = 272;
+	private final int DONE = 253;
+	private final int PRIZE_TEXT = 169;
 	
 	@Override
 	public void run() {
 		
 		if(Widgets.get(1139, 2).isOnScreen()) {
 			
-			if(Widgets.get(1139, 6).getText().equals("0") && !Widgets.get(1252, 3).isOnScreen()) {
+			if(Widgets.get(1139, 6).getText().equals("0") && !Widgets.get(1252, 5).isOnScreen()) {
 				
 				if(Widgets.get(548, 160).click(true) && !Widgets.get(1322, 8).isOnScreen()) {
 					
@@ -47,11 +47,11 @@ public class UseSpin extends Strategy implements Runnable {
 				
 			} else {
 				
-				if(Widgets.get(1252, 3).isOnScreen()) {
+				if(Widgets.get(1252, 5).isOnScreen()) {
 					
-					while(!Widgets.get(1316, 19).isOnScreen() && !Widgets.get(1322, 8).isOnScreen() && !Widgets.get(1313, 11).isOnScreen() && !Widgets.get(1337, 26).isOnScreen() && (!Widgets.get(1253, SPIN_BUTTON).isOnScreen() && Widgets.get(1252, 3).isOnScreen()) && !Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
+					while(!Widgets.get(1316, 19).isOnScreen() && !Widgets.get(1322, 8).isOnScreen() && !Widgets.get(1313, 11).isOnScreen() && !Widgets.get(1337, 26).isOnScreen() && (!Widgets.get(1253, SPIN_BUTTON).isOnScreen() && Widgets.get(1252, 5).isOnScreen()) && !Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
 						
-						Widgets.get(1252, 3).click(true);
+						Widgets.get(1252, 5).click(true);
 						
 						Time.sleep(1000, 1500);
 						
