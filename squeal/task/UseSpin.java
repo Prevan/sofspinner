@@ -51,7 +51,7 @@ public class UseSpin extends Strategy implements Runnable {
 					
 					while(!Widgets.get(1316, 19).isOnScreen() && !Widgets.get(1322, 8).isOnScreen() && !Widgets.get(1313, 11).isOnScreen() && !Widgets.get(1337, 26).isOnScreen() && (!Widgets.get(1253, SPIN_BUTTON).isOnScreen() && Widgets.get(1252, 5).isOnScreen()) && !Widgets.get(1253, CLAIM_BUTTON).isOnScreen()) {
 						
-						Widgets.get(1252, 5).click(true);
+						Widgets.get(1252, 7).click(true); //closing interface
 						
 						Time.sleep(1000, 1500);
 						

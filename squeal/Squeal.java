@@ -138,22 +138,6 @@ public class Squeal extends ActiveScript {
 		
 	}
 	
-	public static void stopScript() {
-		
-		try {
-			
-			prizeLogger.close();
-			
-		} catch (IOException e) {
-
-			e.printStackTrace();
-			
-		}
-		
-		//need to stop the script here.
-		
-	}
-	
 	public static void logPrize(String p){
 		
 		try {

@@ -1,6 +1,7 @@
 package squeal.task;
 
 import java.awt.event.KeyEvent;
+import java.io.FileReader;
 import java.util.Scanner;
 
 import org.powerbot.concurrent.strategy.Strategy;
@@ -10,6 +11,7 @@ import org.powerbot.game.api.methods.input.Keyboard;
 import org.powerbot.game.api.methods.widget.Lobby;
 import org.powerbot.game.api.util.Time;
 
+import squeal.Setup;
 import squeal.Squeal;
 
 public class EnterGame extends Strategy implements Runnable {
@@ -111,8 +113,9 @@ public class EnterGame extends Strategy implements Runnable {
 			} else {
 				
 				System.out.println("There are not anymore ids");
+				System.out.println("Restarting list..");
 				
-				Squeal.stopScript();
+				Squeal.setScanner(new Scanner(new FileReader(Setup.getMainPanel().getTopLeftPanel().getIdsFile())));
 				
 			}
 					
@@ -196,6 +199,16 @@ public class EnterGame extends Strategy implements Runnable {
 				if(Widgets.get(596, 65).click(true)) {
 					
 					System.out.println("account locked....");
+					
+				}
+				
+			}
+			
+			if(Widgets.get(596, 13).getText().startsWith("Your ban will")) {
+				
+				if(Widgets.get(596, 65).click(true)) {
+					
+					System.out.println("Account banned..");
 					
 				}
 				
